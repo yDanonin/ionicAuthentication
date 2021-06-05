@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="/assets/Logo.png " class="logo"/>
+  
+  <div class ="titulo">
+    <h2>Bem-Vindo</h2>
+    <p>Aplicativo Mobile</p>
+  </div>
+
+  <div class="margem">
+    <form [formGroup]="fGroup">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email"></ion-input>
+        <!--<div *ngIf="fGroup.controls.email.errors">
+          <p *ngIf="fGroup.controls.email.errors.required"> Campo Obrigatório</p>
+        </div>-->
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+  <div class="margem">
+    <ion-button (click)="submitForm()" expand="block"  [disabled]="!fGroup.valid">Login</ion-button>
+    <ion-button fill="outline" expand="block">Cadastrar</ion-button>
+  </div>
+
+    
+  <div class="ion-text-center">
+    <ion-label class="centralizarLabel">Recuperar Senha</ion-label>
+  </div>
+  
+
+</ion-content>
